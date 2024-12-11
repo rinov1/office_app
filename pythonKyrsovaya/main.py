@@ -812,6 +812,10 @@ def hr_list():
     back_btn.place(relx=0.9, rely=0.06, anchor='center')
 
 
+def close_app(root):
+    root.destroy()
+
+
 root = tk.Tk()
 root.title('Авторизация')
 root['bg'] = '#272930'
@@ -828,6 +832,9 @@ entry_btn.place(relx=0.5, rely=0.43, anchor='center')
 registration_btn = Button(root, text='Регистрация', font='Roboto 18', fg='white', bg='#83c775', borderwidth=0, width=18,
                           command=registration_win)
 registration_btn.place(relx=0.5, rely=0.6, anchor='center')
+
+close_button = tk.Button(root, text="Закрыть", font='Roboto 13', fg='white', bg='#f33f3f', borderwidth=0, width=9, command=lambda: close_app(root))
+close_button.place(relx=0.9, rely=0.06, anchor='center')
 
 try:
     root.mainloop()
